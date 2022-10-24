@@ -7,8 +7,13 @@ DOCUMENTATION
 SYMBOL TABLE implemented using hash table
 
 HASH TABLE
+
 HashTable(size) - returns an object of type hashtable that has a number of "size" lists,if size it is not provided the default is 10
+
 getElements() - returns all the elements in the hashtable, including the empty lists
+
 hashFunction(element) - returns the position of the list for an element to be inserted
+
 getElement(element) - returns the position of the list for an elements followed by the index of the element in that list, None if the element is not in the hash table
+
 addElement(element) - returns the position of the list for an elements followed by the index of the element in that list if the element is added succesfully, returns None if the elements is already in the hash table
