@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class HashTable
+{
+[ ] elements
+int size
+getElements()
+hashFunction(element)
+getElement(element)
+addElement(element)
+}
+class SymbolTable
+{
+HashTable identifierHashTable
+HashTable constantsHashTable
+addIdentifier(identifier)
+hasIdentifier(identifier)
+addConstant(constant)
+hasConstant(constant)
+}
+HashTable --> SymbolTable
+
+class Scanner{
+SymbolTable symbolTable
+[ ] pif
+string filePath
+checkIdentifier(string)
+checkSeparator(string)
+checkOperator(string)
+parse()
+}
+
+SymbolTable --> Scanner
+@enduml
