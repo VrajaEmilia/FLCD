@@ -17,3 +17,24 @@ hashFunction(element) - returns the position of the list for an element to be in
 getElement(element) - returns the position of the list for an elements followed by the index of the element in that list, None if the element is not in the hash table
 
 addElement(element) - returns the position of the list for an elements followed by the index of the element in that list if the element is added succesfully, returns None if the elements is already in the hash table
+
+
+SYMBOL TABLE
+
+addIdentifier(identifier) - returns the position of the identifier if the insert is successful, None otherwise
+
+addConstant(constant) - returns the position of the constant if the insert is successful, None otherwise
+    
+hasIdentifier(identifier) - returns the position of the identifier in the SymbolTable
+
+hasConstant(constant) - returns the position of the constant in the SymbolTable
+
+Scanner
+
+checkIdentifier(string) - regex to check if an identifier is correctly written, returns the match from the string
+
+checkSeparator(string) - regex to check if a string contains a separator, returns the list of separators found in the string
+
+checkOperator(string) - regex to check if a string contains a operator, returns the list of operators found in the string
+
+parse() - parses the file, adding the tokens in pif and SymbolTable
