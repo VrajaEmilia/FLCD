@@ -1,12 +1,12 @@
 INCEPUT
-	{ INT number, INT d, BOOL estePrim }
+	{ INT number , INT d , BOOL estePrim }
 ;
 	{
-		CITESTE d,
-		d=2,
-		estePrim=true,
-		CAT_TIMP d<number/2 EXECUTA
-			DACA number%d==0 ATUNCI estePrim=false,
+		CITESTE d ,
+		d=2 ,
+		estePrim=true ,
+		CAT_TIMP d<3number/2 EXECUTA
+			DACA 3number%d==0 ATUNCI estePrim=false ,
 		DACA estePrim ATUNCI SCRIE "prim" ALTFEL SCRIE "nu_este_prim"
 	}
 SFARSIT
