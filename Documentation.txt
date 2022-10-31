@@ -29,7 +29,8 @@ hasIdentifier(identifier) - returns the position of the identifier in the Symbol
 
 hasConstant(constant) - returns the position of the constant in the SymbolTable
 
-Scanner
+
+SCANNER
 
 checkIdentifier(string) - regex to check if an identifier is correctly written, returns the match from the string
 

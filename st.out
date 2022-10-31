@@ -1,0 +1,15 @@
+identifier : 
+d  pos:  4 0
+estePrim  pos:  11 0
+number  pos:  13 0
+
+ constants: 
+prim  pos:  3 0
+d  pos:  4 0
+nu_este_prim  pos:  8 0
+true  pos:  9 0
+false  pos:  10 0
+estePrim  pos:  11 0
+0  pos:  11 1
+number  pos:  13 0
+2  pos:  17 0

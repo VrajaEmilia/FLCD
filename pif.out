@@ -1,0 +1,56 @@
+INCEPUT  pos:   -1
+{  pos:   -1
+INT  pos:   -1
+number  pos:   13 0
+,  pos:   -1
+INT  pos:   -1
+d  pos:   4 0
+,  pos:   -1
+BOOL  pos:   -1
+estePrim  pos:   11 0
+}  pos:   -1
+;  pos:   -1
+{  pos:   -1
+CITESTE  pos:   -1
+d  pos:   4 0
+,  pos:   -1
+d  pos:   4 0
+=  pos:   -1
+2  pos:   17 0
+,  pos:   -1
+estePrim  pos:   11 0
+=  pos:   -1
+true  pos:   9 0
+,  pos:   -1
+CAT_TIMP  pos:   -1
+d  pos:   4 0
+<  pos:   -1
+number  pos:   13 0
+/  pos:   -1
+2  pos:   17 0
+EXECUTA  pos:   -1
+DACA  pos:   -1
+number  pos:   13 0
+%  pos:   -1
+d  pos:   4 0
+==  pos:   -1
+0  pos:   11 1
+ATUNCI  pos:   -1
+estePrim  pos:   11 0
+=  pos:   -1
+false  pos:   10 0
+,  pos:   -1
+DACA  pos:   -1
+estePrim  pos:   11 0
+ATUNCI  pos:   -1
+SCRIE  pos:   -1
+"  pos:   -1
+prim  pos:   3 0
+"  pos:   -1
+ALTFEL  pos:   -1
+SCRIE  pos:   -1
+"  pos:   -1
+nu_este_prim  pos:   8 0
+"  pos:   -1
+}  pos:   -1
+SFARSIT  pos:   -1

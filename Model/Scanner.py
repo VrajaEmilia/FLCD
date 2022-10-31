@@ -11,6 +11,8 @@ class Scanner:
 
     @staticmethod
     def checkIdentifier(st):
+        if st == 'true' or st == 'false':
+            return None
         s = re.findall("^[a-zA-Z]+[0-9]*", st)
         return s
 
@@ -52,7 +54,7 @@ class Scanner:
                         self.__pif.append((token[len(token)-1],-1))
                     #check for expressions
                     elif Scanner.checkOperator(token):
-                        if(Scanner.checkSeparator(token)):
+                        if Scanner.checkSeparator(token):
                             self.handleExpression(token[:-1])
                             self.__pif.append((token[len(token)-1],-1))
                         else:
@@ -60,8 +62,50 @@ class Scanner:
                     else:
                         print(token)
 
+        self.printToFile()
     def handleExpression(self, token):
-        print(token)
+        if not Scanner.checkOperator(token):
+            if Scanner.checkIdentifier(token):
+                self.__symbolTable.addIdentifier(token)
+                self.__pif.append((token,self.__symbolTable.hasIdentifier(token)))
+            else:
+                self.__symbolTable.addConstant(token)
+                self.__pif.append((token,self.__symbolTable.hasConstant(token)))
+        elif re.findall('==',token):
+            self.handleExpression(token.split('==')[0])
+            self.__pif.append(('==', -1))
+            self.handleExpression(token.split('==')[1])
+        elif re.findall('<=', token):
+            self.handleExpression(token.split('<=')[0])
+            self.__pif.append(('<=', -1))
+            self.handleExpression(token.split('<=')[1])
+        elif re.findall('>=', token):
+            self.handleExpression(token.split('>=')[0])
+            self.__pif.append(('>=', -1))
+            self.handleExpression(token.split('>=')[1])
+        elif re.findall('!=', token):
+            self.handleExpression(token.split('!=')[0])
+            self.__pif.append(('!=', -1))
+            self.handleExpression(token.split('!=')[1])
+        elif Scanner.checkOperator(token):
+            op = Scanner.checkOperator(token)[0]
+            self.handleExpression(token.split(op)[0])
+            self.__pif.append((op,-1))
+            self.handleExpression(token.split(op)[1])
 
+    def printToFile(self):
+        f_pif= open("pif.out","a")
+        f_symbolTable = open("st.out","a")
+        f_pif.write(self.pifToString())
+        f_symbolTable.write(self.__symbolTable.__str__())
+        self.pifToString()
 
-
+    def pifToString(self):
+        s = ''
+        for pair in self.__pif:
+            s = s + pair[0] + '  pos:   '
+            if not type(pair[1])==int:
+                s = s + str(pair[1][0]) + ' ' + str(pair[1][1]) + '\n'
+            else:
+                s = s + str(pair[1]) + '\n'
+        return s

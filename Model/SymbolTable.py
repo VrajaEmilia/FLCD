@@ -18,3 +18,7 @@ class SymbolTable:
     def hasConstant(self,constant):
         return self.__constantsHashTable.getElement(constant)
 
+    def __str__(self) -> str:
+        return 'identifier : \n' + self.__identifierHashTable.__str__() + '\n constants: \n' + self.__constantsHashTable.__str__()
+
+
