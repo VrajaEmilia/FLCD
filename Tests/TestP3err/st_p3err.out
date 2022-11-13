@@ -1,0 +1,14 @@
+identifier : 
+d  pos:  27 0
+estePrim  pos:  11 0
+
+ constants: 
+2  pos:  13 0
+true  pos:  9 0
+0  pos:  6 0
+false  pos:  13 1
+invalid token on line 1 : 3number
+invalid token on line 7 : 3number
+invalid token on line 8 : 3number
+invalid token on line 9 : 'p
+invalid token on line 9 : "nu_este_prim'

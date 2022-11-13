@@ -4,6 +4,7 @@ class HashTable:
         for i in range(size):
             self.__elements.append([])
         self.__size = size
+        self.__orderedElements = []
 
     def getElements(self):
         return self.__elements
@@ -22,15 +23,14 @@ class HashTable:
         if self.getElement(element) is None:
             pos = self.hashFunction(element)
             self.__elements[pos].append(element)
+            self.__orderedElements.append((element,(pos, len(self.__elements[pos]) - 1)))
             return pos, len(self.__elements[pos]) - 1
         return None
 
     def __str__(self) -> str:
         s = ''
-        for element in self.__elements:
-            if len(element) :
-                for el in element:
-                    s = s + el + "  pos:  " + str(self.getElement(el)[0]) + ' ' + str(self.getElement(el)[1]) + '\n'
+        for element in self.__orderedElements:
+            s = s + element[0] + "  pos:  " + str(element[1][0]) + ' ' + str(element[1][1]) + '\n'
         return s
 
 

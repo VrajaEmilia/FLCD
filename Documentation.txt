@@ -38,4 +38,4 @@ checkSeparator(string) - regex to check if a string contains a separator, return
 
 checkOperator(string) - regex to check if a string contains a operator, returns the list of operators found in the string
 
-scan() - parses the file, adding the tokens in pif and SymbolTable
+scan() - scans the file, adding the tokens in pif and SymbolTable

@@ -1,0 +1,41 @@
+INCEPUT  pos:   -1
+{  pos:   -1
+INT  pos:   -1
+a  pos:   20 0
+,  pos:   -1
+INT  pos:   -1
+b  pos:   7 0
+,  pos:   -1
+INT  pos:   -1
+gcd  pos:   12 0
+,  pos:   -1
+INT  pos:   -1
+aux  pos:   20 1
+}  pos:   -1
+;  pos:   -1
+{  pos:   -1
+CAT_TIMP  pos:   -1
+b  pos:   7 0
+!=  pos:   -1
+0  pos:   6 0
+EXECUTA  pos:   -1
+(  pos:   -1
+aux  pos:   20 1
+=  pos:   -1
+a  pos:   20 0
+,  pos:   -1
+a  pos:   20 0
+=  pos:   -1
+b  pos:   7 0
+,  pos:   -1
+b  pos:   7 0
+=  pos:   -1
+aux  pos:   20 1
+%  pos:   -1
+b  pos:   7 0
+)  pos:   -1
+,  pos:   -1
+SCRIE  pos:   -1
+a  pos:   20 0
+}  pos:   -1
+SFARSIT  pos:   -1

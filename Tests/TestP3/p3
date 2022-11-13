@@ -1,0 +1,9 @@
+INCEPUT
+	{ INT a, INT b, INT gcd, INT aux }
+;
+	{
+		CAT_TIMP b!=0 EXECUTA  ( aux=a, a=b, b=aux%b )
+		,
+		SCRIE a
+	}
+SFARSIT

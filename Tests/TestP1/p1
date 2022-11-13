@@ -1,0 +1,11 @@
+INCEPUT
+	{ INT a, INT b, INT c, INT max }
+;
+	{
+	a=10, b=15, c=3,
+	DACA a>=b ATUNCI
+		DACA a>=c ATUNCI max=a ALTFEL max=c
+	ALTFEL
+		DACA b>=c ATUNCI max=b ALTFEL max=c
+	}
+SFARSIT
