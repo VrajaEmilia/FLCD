@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59074377-68f2-4df0-8c90-824b11461081" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tests/TestP2/p2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP2/pif_p2.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP2/st_p2.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP3/p3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP3/pif_p3.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP3/st_p3.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP3err/p3err" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP3err/pif_p3err.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/TestP3err/st_p3err.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HashTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/ClassDiagram.puml" beforeDir="false" afterPath="$PROJECT_DIR$/ClassDiagram.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/HashTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/HashTable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Scanner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scanner.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SymbolTable.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/p1" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/p1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pif.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/st.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

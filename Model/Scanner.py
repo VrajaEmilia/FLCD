@@ -62,23 +62,28 @@ class Scanner:
             self.__pif.append((sep, -1))
         #checking if const or identifier
         elif not Scanner.checkOperator(token):
+            #int const
             if token.isnumeric():
                 self.__symbolTable.addConstant(token)
                 self.__pif.append((token, self.__symbolTable.hasConstant(token)))
+            #bool const
             elif token == 'true' or token == 'false':
                 self.__symbolTable.addConstant(token)
                 self.__pif.append((token, self.__symbolTable.hasConstant(token)))
+            #string or char const
             elif (token[0] == "\"" and token[len(token) - 1] == "\"") or (
                     token[0] == "'" and token[len(token) - 1] == "'"):
                 self.__pif.append((token[0], -1))
                 self.__symbolTable.addConstant(token[1:-1])
                 self.__pif.append((token[1:-1], self.__symbolTable.hasConstant(token[1:-1])))
                 self.__pif.append((token[0], -1))
+            #identifier
             elif self.checkIdentifier(token):
                 self.__symbolTable.addIdentifier(token)
                 self.__pif.append((token, self.__symbolTable.hasIdentifier(token)))
             else:
                 self.__error = self.__error + 'invalid token on line ' + str(self.__errIdx) + ' : ' + token + '\n'
+        #splits expressions by operators
         else:
             op = Scanner.checkOperator(token)[0]
             token = token.split(op)
