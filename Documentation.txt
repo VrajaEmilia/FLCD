@@ -36,6 +36,6 @@ checkIdentifier(string) - regex to check if an identifier is correctly written, 
 
 checkSeparator(string) - regex to check if a string contains a separator, returns the list of separators found in the string
 
-checkOperator(string) - regex to check if a string contains a operator, returns the list of operators found in the string
+checkOperator(string) - regex to check if a string contains an operator, returns the list of operators found in the string
 
 scan() - scans the file, adding the tokens in pif and SymbolTable
