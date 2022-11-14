@@ -1,12 +1,12 @@
 identifier : 
 d  pos:  27 0
-estePrim  pos:  11 0
+estePrim  pos:  15 0
 
  constants: 
 2  pos:  13 0
-true  pos:  9 0
-0  pos:  6 0
-false  pos:  13 1
+true  pos:  24 0
+0  pos:  15 0
+false  pos:  24 1
 invalid token on line 1 : 3number
 invalid token on line 7 : 3number
 invalid token on line 8 : 3number

@@ -1,5 +1,3 @@
-import re
-
 from Model.Scanner import Scanner
 
 scanner1 = Scanner('Tests/TestP1/p1', 'Tests/TestP1/pif_p1.out', 'Tests/TestP1/st_p1.out')

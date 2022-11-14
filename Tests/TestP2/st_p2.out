@@ -1,12 +1,12 @@
 identifier : 
-number  pos:  4 0
+number  pos:  25 0
 d  pos:  27 0
-estePrim  pos:  11 0
+estePrim  pos:  15 0
 
  constants: 
 2  pos:  13 0
-true  pos:  9 0
-0  pos:  6 0
-false  pos:  13 1
-prim  pos:  28 0
-nu_este_prim  pos:  26 0
+true  pos:  24 0
+0  pos:  15 0
+false  pos:  24 1
+prim  pos:  27 0
+nu_este_prim  pos:  3 0

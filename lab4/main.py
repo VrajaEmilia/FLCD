@@ -1,5 +1,5 @@
-from FiniteAutomata import FiniteAutomata
+from FiniteAutomaton import FiniteAutomaton
 
 if __name__ == '__main__':
-    fa = FiniteAutomata('fa.in')
+    fa = FiniteAutomaton('fa.in')
     fa.run_menu()

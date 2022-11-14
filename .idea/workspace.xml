@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59074377-68f2-4df0-8c90-824b11461081" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lab4/FaDoc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP2/pif_p2.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP2/pif_p2.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP2/st_p2.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP2/st_p2.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP3/pif_p3.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3/pif_p3.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP3/st_p3.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3/st_p3.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP3err/pif_p3err.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3err/pif_p3err.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP3err/st_p3err.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3err/st_p3err.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/FiniteAutomata.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/FiniteAutomaton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,13 +33,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/vraja/Documents/GitHub/FLCD/main.py"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vraja/Documents/GitHub/FLCD&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP1" />

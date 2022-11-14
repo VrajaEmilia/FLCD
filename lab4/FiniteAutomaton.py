@@ -1,7 +1,4 @@
-from asyncio import sleep
-
-
-class FiniteAutomata:
+class FiniteAutomaton:
     def __init__(self, file):
         self.setOfStates = []
         self.alphabet = []
@@ -30,11 +27,12 @@ class FiniteAutomata:
             key = splitLine[0]
             value = splitLine[1]
             key = key.strip("(").strip(")").split(",")
-            self.transitions[(key[0], key[1])] = value
+            if not self.transitions.__contains__((key[0], key[1])):
+                self.transitions[(key[0], key[1])] = value
 
     def run_menu(self):
         while True:
-            FiniteAutomata.printMenu()
+            FiniteAutomaton.printMenu()
             option = input(">>")
             if option == '0':
                 print("Bye!")
@@ -52,7 +50,7 @@ class FiniteAutomata:
         print('3.Print transitions')
         print('4.Print initial state')
         print('5.Print set of final states')
-        print('6.Verify dfa')
+        print('6.Verify accepted')
 
     def print_states(self):
         print("SET OF STATES:", self.setOfStates)
@@ -70,7 +68,7 @@ class FiniteAutomata:
         print("SET OF FINAL STATES", self.final_states)
 
     def verify_dfa(self):
-        array = input("Enter dfa:").strip('\n').split()
+        array = input("Enter sequence:").strip('\n').split()
         state = self.initial_state
         for element in array:
             if (state,element) in self.transitions:
