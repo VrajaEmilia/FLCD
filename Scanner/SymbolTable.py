@@ -1,4 +1,4 @@
-from Model.HashTable import HashTable
+from Scanner.HashTable import HashTable
 
 
 class SymbolTable:

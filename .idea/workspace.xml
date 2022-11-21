@@ -2,24 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59074377-68f2-4df0-8c90-824b11461081" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lab4/FaDoc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parser/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parser/cfg.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scanner/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP2/pif_p2.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP2/pif_p2.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP2/st_p2.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP2/st_p2.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP3/pif_p3.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3/pif_p3.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP3/st_p3.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3/st_p3.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP3err/pif_p3err.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3err/pif_p3err.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/TestP3err/st_p3err.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP3err/st_p3err.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab4/FiniteAutomata.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/FiniteAutomaton.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab4/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/HashTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner/HashTable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner/Scanner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/SymbolTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner/SymbolTable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/FiniteAutomata/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/lab4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/Document 2.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/FiniteAutomata/Document 2.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/FiniteAutomaton.py" beforeDir="false" afterPath="$PROJECT_DIR$/FiniteAutomata/FiniteAutomaton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/doc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/FiniteAutomata/doc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/fa.in" beforeDir="false" afterPath="$PROJECT_DIR$/FiniteAutomata/fa.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab4/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/FiniteAutomata/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <list id="eaefe9dd-328e-4f0e-afa5-af93e49d173d" name="Changes by evolo" comment="">
+      <change beforePath="$PROJECT_DIR$/lab4/FaDoc" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/Grammar.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,26 +51,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vraja/Documents/GitHub/FLCD&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/vraja/Documents/GitHub/FLCD/Scanner"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Scanner" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\FiniteAutomata" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP3err" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP1" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD" />
-      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\constants" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="Grammar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FLCD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Parser" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Parser/Grammar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python">
       <module name="FLCD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,6 +114,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Grammar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,5 +141,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Parser/Grammar.py</url>
+          <line>84</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="productions" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

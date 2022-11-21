@@ -1,4 +1,4 @@
-from Model.SymbolTable import SymbolTable
+from Scanner.SymbolTable import SymbolTable
 from constants.constants import reservedWords, separators, operators
 import re
 

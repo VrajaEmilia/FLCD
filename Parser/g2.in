@@ -1,0 +1,9 @@
+N = { declist, cmpstmt declaration }
+E = { INCEPUT, {, }, SFARSIT, ; }
+P = {
+    S -> INCEPUT { declist } ; { cmpstmt } SFARSIT
+    declist -> declaration | declaration , declist
+    declaration -> a
+    cmpstmt -> b
+}
+S = S
