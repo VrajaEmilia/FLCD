@@ -15,33 +15,28 @@ class Grammar:
                 elif line[0] == 'S':
                     self.__S = line.strip().replace(" ", "").split("=")[1]
                 elif line[0] == 'P':
+                    self.__P={}
                     text = line.strip()
                     try:
-                        l = f_in.readline()
-                        while "}" not in l:
-                            text = text + l.strip()
-                            l = f_in.readline()
-                        text = text + l.strip()
-                        self.__P = self.__parseProductions(self.__parseSet(text))
+                        l = f_in.readline().strip()
+                        while l:
+                            self.__parseProductions(l)
+                            l = f_in.readline().strip()
                     except StopIteration:
                         pass
 
     def __parseSet(self, line):
-        Set = line.strip().split("=")[1].strip()
-        elements = Set[1:-1].strip().split(",")
-        result = []
-        for elem in elements:
-            result.append(elem.strip())
-        return result
+        set = line.split("=")[1].strip().split(" ")
+        return set
 
     def __parseProductions(self, productionsSet):
-        productionsDict = {}
-        for productionText in productionsSet:
-            productionText = productionText.replace(" ", "")
-            nonterminal, productions = productionText.split("->")
-            productionsList = productions.replace(" ", "").split("|")
-            productionsDict[nonterminal] = productionsList
-        return productionsDict
+        key = productionsSet.split("->")[0].strip()
+        values = productionsSet.split("->")[1].strip().split("|")
+        for value in values:
+            value = value.strip()
+            if key not in self.__P.keys():
+                self.__P[key] = []
+            self.__P[key].append(value)
 
     def getNonTerminalsString(self):
         return 'N = { ' + ', '.join(self.__N) + ' }\n'
@@ -58,7 +53,7 @@ class Grammar:
         return 'N = { ' + ', '.join(self.__N) + ' }\n' \
                + 'E = { ' + ', '.join(self.__E) + ' }\n' \
                + 'S = {\n' + ',\n'.join(
-            [nonterminal + " -> " + " | " .join(self.__P[nonterminal]) for nonterminal in self.__P]
+            [nonterminal + " -> " + " | ".join(self.__P[nonterminal]) for nonterminal in self.__P]
         ) + '\n}\n'
 
     def getProductionsForNonterminal(self, nonterminal):
@@ -67,7 +62,11 @@ class Grammar:
     def getProductionsStringForNonterminal(self, nonterminal):
         return nonterminal + " -> " + ' | '.join(self.__P[nonterminal]) + "\n"
 
-    def __check_CFG_handler(self,w,initial_w):
+    def __check__cfg_words(self, w):
+        splitW = w.strip("\n").split(" ")
+        print(splitW)
+
+    def __check_CFG_handler(self, w, initial_w):
         if len(w) > len(initial_w):
             return False
         if w == initial_w:
@@ -81,7 +80,7 @@ class Grammar:
 
         return False
 
-    def __check_CFG_handler2(self,w,initial_w):
+    def __check_CFG_handler2(self, w, initial_w):
         if len(w) > len(initial_w):
             return False
         if w == initial_w:
@@ -109,6 +108,5 @@ class Grammar:
 
         return False
 
-
-    def checkCFG(self,w):
-        return self.__check_CFG_handler2(self.__S,w)
+    def checkCFG(self, w):
+        return self.__check_CFG_handler2(self.__S, w)
