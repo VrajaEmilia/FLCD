@@ -1,3 +1,6 @@
+import copy
+
+
 class Grammar:
     def __init__(self, N, E, P, S):
         self.__N = N
@@ -50,11 +53,12 @@ class Grammar:
         ) + '\n}\n'
 
     def __str__(self):
-        return 'N = { ' + ', '.join(self.__N) + ' }\n' \
-               + 'E = { ' + ', '.join(self.__E) + ' }\n' \
-               + 'S = {\n' + ',\n'.join(
+        return 'N = ' + " ".join(self.__N) + '\n' \
+               + 'E = ' + ' '.join(self.__E) + '\n' \
+               + 'S = ' + self.__S + '\n'\
+               + 'P = \n' + '\n'.join(
             [nonterminal + " -> " + " | ".join(self.__P[nonterminal]) for nonterminal in self.__P]
-        ) + '\n}\n'
+        ) + '\n'
 
     def getProductionsForNonterminal(self, nonterminal):
         return self.__P[nonterminal]
@@ -82,31 +86,39 @@ class Grammar:
 
     def __check_CFG_handler2(self, w, initial_w):
         if len(w) > len(initial_w):
-            return False
+             return False
         if w == initial_w:
-            return True
-
-        positions = {}
-        for nonterminal in self.__N:
-            positions[nonterminal] = w.find(nonterminal)
-
-        min = -1
-        toBeReplaced = ""
-        for i in positions:
-            if positions[i] != -1:
-                if min == -1:
-                    min = positions[i]
-                    toBeReplaced = i
-                else:
-                    if min > positions[i]:
-                        min = positions[i]
-                        toBeReplaced = i
-
-        for prod in self.__P[toBeReplaced]:
-            if self.__check_CFG_handler(w.replace(toBeReplaced, prod, 1), initial_w):
-                return True
-
+             return True
+        for token in w:
+            if token in self.__N:
+                for value in self.__P[token]:
+                    index = w.index(token)
+                    new_w = copy.deepcopy(w[:index] + value.split(" ") + w[index + 1:])
+                    if self.__check_CFG_handler2(new_w, initial_w):
+                        return True
         return False
+        #
+        # positions = {}
+        # for nonterminal in self.__N:
+        #     positions[nonterminal] = w.find(nonterminal)
+        #
+        # min = -1
+        # toBeReplaced = ""
+        # for i in positions:
+        #     if positions[i] != -1:
+        #         if min == -1:
+        #             min = positions[i]
+        #             toBeReplaced = i
+        #         else:
+        #             if min > positions[i]:
+        #                 min = positions[i]
+        #                 toBeReplaced = i
+        #
+        # for prod in self.__P[toBeReplaced]:
+        #     if self.__check_CFG_handler(w.replace(toBeReplaced, prod, 1), initial_w):
+        #         return True
+        #
+        # return False
 
     def checkCFG(self, w):
-        return self.__check_CFG_handler2(self.__S, w)
+        return self.__check_CFG_handler2(["S"], w)

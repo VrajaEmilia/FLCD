@@ -1,4 +1,4 @@
-N = declist cmpstmt declaration
+N = declist cmpstmt declaration S
 E = INCEPUT {  }  SFARSIT ; ,
 S = S
 P =

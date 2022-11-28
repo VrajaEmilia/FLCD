@@ -4,7 +4,6 @@
     <list default="true" id="59074377-68f2-4df0-8c90-824b11461081" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/Grammar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/Grammar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parser/cfg.in" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/cfg.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/g2.in" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/g2.in" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
