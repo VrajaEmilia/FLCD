@@ -1,6 +1,7 @@
 import copy
 
 
+
 class Grammar:
     def __init__(self, N, E, P, S):
         self.__N = N
@@ -33,13 +34,13 @@ class Grammar:
         return set
 
     def __parseProductions(self, productionsSet):
-        key = productionsSet.split("->")[0].strip()
+        key = tuple(productionsSet.split("->")[0].strip().split(" "))
         values = productionsSet.split("->")[1].strip().split("|")
         for value in values:
             value = value.strip()
             if key not in self.__P.keys():
                 self.__P[key] = []
-            self.__P[key].append(value)
+            self.__P[key].append(value.split(" "))
 
     def getNonTerminalsString(self):
         return 'N = { ' + ', '.join(self.__N) + ' }\n'
@@ -57,7 +58,7 @@ class Grammar:
                + 'E = ' + ' '.join(self.__E) + '\n' \
                + 'S = ' + self.__S + '\n'\
                + 'P = \n' + '\n'.join(
-            [nonterminal + " -> " + " | ".join(self.__P[nonterminal]) for nonterminal in self.__P]
+            [" ".join(nonterminal) + " -> " + " | ".join(" ".join(production) for production in self.__P[nonterminal]) for nonterminal in self.__P]
         ) + '\n'
 
     def getProductionsForNonterminal(self, nonterminal):
@@ -66,59 +67,111 @@ class Grammar:
     def getProductionsStringForNonterminal(self, nonterminal):
         return nonterminal + " -> " + ' | '.join(self.__P[nonterminal]) + "\n"
 
-    def __check__cfg_words(self, w):
-        splitW = w.strip("\n").split(" ")
-        print(splitW)
+    def checkCFG(self):
+        for key in self.__P:
+            if len(key) > 1 or key[0] not in self.__N:
+                return False
+        return True
 
-    def __check_CFG_handler(self, w, initial_w):
-        if len(w) > len(initial_w):
-            return False
-        if w == initial_w:
-            return True
+    class Configuration:
+        def __init__(self,w,S):
+            self.w = w
+            self.state = "q"
+            self.index = 0
+            self.workingStack = []
+            self.inputStack = [S]
 
-        for char in w:
-            if char in self.__N:
-                for prod in self.__P[char]:
-                    if self.__check_CFG_handler(w.replace(char, prod, 1), initial_w):
-                        return True
+        def currentSymbol(self):
+            return self.w[self.index]
 
-        return False
+    def expand(self, config : Configuration):
+        head = config.inputStack[-1]
+        config.workingStack.append((head,0))
+        config.inputStack.pop()
+        production = self.__P[(head,)][0]
+        for i in reversed(production):
+            config.inputStack.append(i)
 
-    def __check_CFG_handler2(self, w, initial_w):
-        if len(w) > len(initial_w):
-             return False
-        if w == initial_w:
-             return True
-        for token in w:
-            if token in self.__N:
-                for value in self.__P[token]:
-                    index = w.index(token)
-                    new_w = copy.deepcopy(w[:index] + value.split(" ") + w[index + 1:])
-                    if self.__check_CFG_handler2(new_w, initial_w):
-                        return True
-        return False
-        #
-        # positions = {}
-        # for nonterminal in self.__N:
-        #     positions[nonterminal] = w.find(nonterminal)
-        #
-        # min = -1
-        # toBeReplaced = ""
-        # for i in positions:
-        #     if positions[i] != -1:
-        #         if min == -1:
-        #             min = positions[i]
-        #             toBeReplaced = i
-        #         else:
-        #             if min > positions[i]:
-        #                 min = positions[i]
-        #                 toBeReplaced = i
-        #
-        # for prod in self.__P[toBeReplaced]:
-        #     if self.__check_CFG_handler(w.replace(toBeReplaced, prod, 1), initial_w):
-        #         return True
-        #
-        # return False
+    def advance(self, config: Configuration):
+        head = config.inputStack[-1]
+        config.workingStack.append(head)
+        config.inputStack.pop()
+        config.index += 1
 
-    def checkCFG(self, w):
-        return self.__check_CFG_handler2(["S"], w)
+    def momentary_insuccess(self, config: Configuration):
+        config.state = "b"
+
+    def back(self, config: Configuration):
+        terminal = config.workingStack[-1]
+        config.workingStack.pop()
+        config.inputStack.append(terminal)
+        config.index -= 1
+
+    def another_try(self, config: Configuration):
+        nonterminal,prodIndex = config.workingStack[-1]
+        productions = self.__P[(nonterminal,)]
+        for i in range(len(productions[prodIndex])):
+            config.inputStack.pop()
+        config.workingStack.pop()
+
+        if len(productions) > prodIndex + 1:
+            prodIndex += 1
+            config.workingStack.append((nonterminal,prodIndex))
+            newProduction = productions[prodIndex]
+            for i in reversed(newProduction):
+                config.inputStack.append(i)
+            config.state = "q"
+        else:
+            config.inputStack.append(nonterminal)
+            if config.index == 0 and config.inputStack[-1] == self.__S:
+                config.state = "e"
+
+    def success(self, config: Configuration):
+        config.state = "f"
+
+    def parse(self,w):
+        config = self.Configuration(w,self.__S)
+        while config.state != "f" and config.state != "e":
+            if config.state == "q":
+                if config.index >= len(w) and config.inputStack == []:
+                    self.success(config)
+                else:
+                    if config.inputStack[-1] in self.__N:
+                        self.expand(config)
+                    else:
+                        if config.inputStack[-1] == config.currentSymbol():
+                            self.advance(config)
+                        else:
+                            self.momentary_insuccess(config)
+            else:
+                if config.state == "b":
+                    if config.workingStack[-1] in self.__E:
+                        self.back(config)
+                    else:
+                        self.another_try(config)
+
+        if config.state == "e":
+            print("Parse result: Error")
+            return ""
+        else:
+            print("Parse result: Sequence accepted")
+            #return BuildStringOfProd(config.workingStack)
+
+
+    # def __parse_handler(self, w, initial_w):
+    #     if len(w) > len(initial_w):
+    #          return False
+    #     if w == initial_w:
+    #          return True
+    #     for token in w:
+    #         if token in self.__N:
+    #             for value in self.__P[token]:
+    #                 index = w.index(token)
+    #                 new_w = copy.deepcopy(w[:index] + value.split(" ") + w[index + 1:])
+    #                 if self.__parse_handler(new_w, initial_w):
+    #                     return True
+    #     return False
+    #
+    # def parse(self, w):
+    #     return self.__parse_handler([self.__S], w)
+
