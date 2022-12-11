@@ -1,7 +1,4 @@
 import copy
-
-
-
 class Grammar:
     def __init__(self, N, E, P, S):
         self.__N = N
@@ -66,6 +63,9 @@ class Grammar:
 
     def getProductionsStringForNonterminal(self, nonterminal):
         return nonterminal + " -> " + ' | '.join(self.__P[nonterminal]) + "\n"
+
+    def getProductions(self):
+        return self.__P
 
     def checkCFG(self):
         for key in self.__P:
@@ -155,23 +155,4 @@ class Grammar:
             return ""
         else:
             print("Parse result: Sequence accepted")
-            #return BuildStringOfProd(config.workingStack)
-
-
-    # def __parse_handler(self, w, initial_w):
-    #     if len(w) > len(initial_w):
-    #          return False
-    #     if w == initial_w:
-    #          return True
-    #     for token in w:
-    #         if token in self.__N:
-    #             for value in self.__P[token]:
-    #                 index = w.index(token)
-    #                 new_w = copy.deepcopy(w[:index] + value.split(" ") + w[index + 1:])
-    #                 if self.__parse_handler(new_w, initial_w):
-    #                     return True
-    #     return False
-    #
-    # def parse(self, w):
-    #     return self.__parse_handler([self.__S], w)
-
+            return config
