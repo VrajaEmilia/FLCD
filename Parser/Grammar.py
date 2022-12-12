@@ -80,6 +80,7 @@ class Grammar:
             self.index = 0
             self.workingStack = []
             self.inputStack = [S]
+            self.mostFarIndex = 0
 
         def currentSymbol(self):
             return self.w[self.index]
@@ -99,6 +100,8 @@ class Grammar:
         config.index += 1
 
     def momentary_insuccess(self, config: Configuration):
+        if(config.mostFarIndex < config.index):
+            config.mostFarIndex = config.index
         config.state = "b"
 
     def back(self, config: Configuration):
@@ -151,9 +154,9 @@ class Grammar:
                         self.another_try(config)
 
         if config.state == "e":
-            print("Parse result: Error")
-            print(f"Current Symbol: {config.currentSymbol()}")
-            return ""
+            print(f"Parse result: Error")
+            print(f"Could not resolve {config.w[config.mostFarIndex]}")
+            return config
         else:
             print("Parse result: Sequence accepted")
             return config
