@@ -1,10 +1,10 @@
 identifier : 
-a  pos:  3 0
-b  pos:  13 0
-c  pos:  20 0
-max  pos:  20 1
+a  pos:  26 0
+b  pos:  14 0
+c  pos:  13 0
+max  pos:  9 0
 
  constants: 
-10  pos:  12 0
-15  pos:  18 0
-3  pos:  20 0
+10  pos:  24 0
+15  pos:  16 0
+3  pos:  4 0
