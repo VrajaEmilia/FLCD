@@ -15,45 +15,30 @@ class ParserOutput:
         self.__workingStack = workingStack
         self.__productions = productions
         self.tree = []
+        self.workingStackIndex = 0
         self.buildParsingTree()
 
     def buildParsingTree(self):
         info, productionIndex = self.__workingStack[0]
         root = Node(0, info, None, None)
         self.tree.append(root)
-        self.buildRecursive(1, info)
+        self.buildTree(0)
+        #self.buildRecursive(1, info)
 
-    def buildRecursive(self, index, parent):
-        #we stop if we reached end of working stack
-        if index == len(self.__workingStack):
-            return
-        #for a nonterminal
-        if type(self.__workingStack[index]) is tuple:
-            info = self.__workingStack[index][0]
-            #if the current node is not a child of parameter parent then we are done with the subtree and we return
-            if not self.isParent(parent, info):
-                return
-            #else we find the sibling and we construct the node
-            sibling = self.findRightSibling(index,parent)
-            node = Node(index,info,parent,sibling)
-            self.tree.append(node)
-            #node is nonterminal so we found a subtree
-            #we parse that subtree
-            self.buildRecursive(index+1, info)
-            #if the node has a sibling we continue to parse the working stack
-            if sibling:
-                self.buildRecursive(sibling, parent)
-        #for terminal
-        else:
-            info = self.__workingStack[index]
-            # if the current node is not a child of parameter parent then we are done with the subtree and we return
-            if not self.isParent(parent, info):
-                return
-            #else we construct the sibling and continue parsing the working stack
-            sibling = self.findRightSibling(index,parent)
-            node = Node(index,info,parent,sibling)
-            self.tree.append(node)
-            self.buildRecursive(index+1,parent)
+    def buildTree(self, parentIndex):
+        prodCount = len(self.__productions[(self.__workingStack[self.workingStackIndex][0],)][self.__workingStack[self.workingStackIndex][1]])
+       # print("***",self.__productions[(self.__workingStack[self.workingStackIndex][0],)])
+        for i in range(prodCount):
+            self.workingStackIndex += 1
+            current = self.__workingStack[self.workingStackIndex]
+            if type(current) is tuple:
+                info = current[0]
+                node = Node(self.workingStackIndex, info, parentIndex, None)
+                self.tree.append(node)
+                self.buildTree(self.workingStackIndex)
+            else:
+                node = Node(self.workingStackIndex, current, parentIndex, None)
+                self.tree.append(node)
 
     def isParent(self, parent, child):
         for key in self.__productions.keys():
@@ -63,15 +48,10 @@ class ParserOutput:
                         return True
         return False
 
-    def findRightSibling(self,index,parent):
-        for i in range(index+1,len(self.__workingStack)):
-            if type(self.__workingStack[i]) is tuple:
-                potentialRightSibling = self.__workingStack[i][0]
-            else:
-                potentialRightSibling = self.__workingStack[i]
-            if self.isParent(parent,potentialRightSibling):
-                return i
-        return None
+    def findRightSibling(self,node):
+        for i in range(node.index+1,len(self.tree)):
+            if self.tree[i].parent == node.parent:
+                return self.tree[i].index
 
     def findParentIndex(self, parent):
         for i in range(len(self.tree)):
@@ -82,7 +62,7 @@ class ParserOutput:
         table = []
         headers = ["index","info","parent","right sibling"]
         for node in self.tree:
-            line = (node.index,node.info,self.findParentIndex(node.parent),node.rightSibling)
+            line = (node.index,node.info,node.parent,self.findRightSibling(node))
             table.append(line)
         return tabulate(table,headers,"grid")
 
