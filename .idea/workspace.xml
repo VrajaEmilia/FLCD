@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="59074377-68f2-4df0-8c90-824b11461081" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scanner/Scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner/Scanner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/pif_p1.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/st_p1.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <list id="eaefe9dd-328e-4f0e-afa5-af93e49d173d" name="Changes by evolo" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +36,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/vraja/Downloads/project_kojak-master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vraja/Downloads/project_kojak-master&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Scanner" />
