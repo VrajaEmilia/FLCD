@@ -14,7 +14,7 @@ class Grammar:
                 elif line[0] == 'E':
                     self.__E = self.__parseSet(line)
                 elif line[0] == 'S':
-                    self.__S = line.strip().replace(" ", "").split("=")[1]
+                    self.__S = line.strip().replace(" ", "").split("->")[1]
                 elif line[0] == 'P':
                     self.__P={}
                     text = line.strip()
@@ -27,7 +27,7 @@ class Grammar:
                         pass
 
     def __parseSet(self, line):
-        set = line.split("=")[1].strip().split(" ")
+        set = line.split("->")[1].strip().split(" ")
         return set
 
     def __parseProductions(self, productionsSet):
@@ -152,6 +152,7 @@ class Grammar:
 
         if config.state == "e":
             print("Parse result: Error")
+            print(f"Current Symbol: {config.currentSymbol()}")
             return ""
         else:
             print("Parse result: Sequence accepted")

@@ -1,0 +1,23 @@
+N -> program declist declaration type1 arraydecl type cmpdstmt stmtlist stmt simplstmt iostmt assignstmt expression term factor ifstmt whilestmt condition RELATION
+E -> INCEPUT {  } ( )  SFARSIT ; , identifier const DACA ATUNCI ALTFEL CAT_TIMP EXECUTA INT BOOL CHAR CITESTE SCRIE SIR CONST VAR = + - * / % >= <= == !=
+S -> program
+P ->
+    program -> INCEPUT { declist } ; cmpdstmt SFARSIT
+    declist -> declaration | declaration , declist
+    declaration -> type identifier
+    type1 -> BOOL | CHAR | INT
+    arraydecl -> SIR ( NR ) DE type1
+    type -> type1 | arraydecl
+    cmpdstmt -> { stmtlist }
+    stmtlist -> stmt | stmt , stmtlist
+    stmt -> simplstmt | cmpdstmt | ifstmt | whilestmt
+    simplstmt -> assignstmt | iostmt
+    iostmt -> CITESTE identifier | SCRIE identifier | SCRIE CONSTANT
+    assignstmt -> identifier = expression
+    expression -> term | term + expression | term - expression
+    term -> factor | factor * term | factor / term | factor % term
+    factor -> identifier | const | ( expression )
+    ifstmt -> DACA condition ATUNCI stmt | DACA condition ATUNCI stmt ALTFEL stmt
+    whilestmt -> CAT_TIMP condition EXECUTA cmpdstmt
+    condition -> expression RELATION expression
+    RELATION -> < | <= | == | != | >= | >
