@@ -17,11 +17,9 @@ def main():
     print(g)
     # config = g.parse(['INCEPUT', '{', 'dec', '}', ';', '{', 'stmt', '}', 'SFARSIT'])
     config = g.parse(w)
-    po = ParserOutput(config.workingStack, g.getProductions())
-    print(po)
-    #po.printToFile("Test/TestP1/parser_out1.txt")
-    # po = ParserOutput(config.workingStack, g.getProductions())
-    # print(po)
-    # po.printToFile('Parser/table.out')
+    if(config.state == "f"):
+        po = ParserOutput(config.workingStack, g.getProductions())
+        print(po)
+        #po.printToFile("Test/TestP1/parser_out1.txt")
 
 main()
