@@ -1,4 +1,6 @@
 from tabulate import tabulate
+
+
 class Node:
     def __init__(self, index, info, parent, rightSibling):
         self.info = info
@@ -7,7 +9,8 @@ class Node:
         self.index = index
 
     def __str__(self) -> str:
-        return "{" + str(self.index) + ", "+ str(self.info) + ", " + str(self.parent) + ", " + str(self.rightSibling)+ "}"
+        return "{" + str(self.index) + ", " + str(self.info) + ", " + str(self.parent) + ", " + str(
+            self.rightSibling) + "}"
 
 
 class ParserOutput:
@@ -23,11 +26,12 @@ class ParserOutput:
         root = Node(0, info, None, None)
         self.tree.append(root)
         self.buildTree(0)
-        #self.buildRecursive(1, info)
+        # self.buildRecursive(1, info)
 
     def buildTree(self, parentIndex):
-        prodCount = len(self.__productions[(self.__workingStack[self.workingStackIndex][0],)][self.__workingStack[self.workingStackIndex][1]])
-       # print("***",self.__productions[(self.__workingStack[self.workingStackIndex][0],)])
+        prodCount = len(self.__productions[(self.__workingStack[self.workingStackIndex][0],)][
+                            self.__workingStack[self.workingStackIndex][1]])
+        # print("***",self.__productions[(self.__workingStack[self.workingStackIndex][0],)])
         for i in range(prodCount):
             self.workingStackIndex += 1
             current = self.__workingStack[self.workingStackIndex]
@@ -48,8 +52,8 @@ class ParserOutput:
                         return True
         return False
 
-    def findRightSibling(self,node):
-        for i in range(node.index+1,len(self.tree)):
+    def findRightSibling(self, node):
+        for i in range(node.index + 1, len(self.tree)):
             if self.tree[i].parent == node.parent:
                 return self.tree[i].index
 
@@ -60,13 +64,13 @@ class ParserOutput:
 
     def __str__(self):
         table = []
-        headers = ["index","info","parent","right sibling"]
+        headers = ["index", "info", "parent", "right sibling"]
         for node in self.tree:
-            line = (node.index,node.info,node.parent,self.findRightSibling(node))
+            line = (node.index, node.info, node.parent, self.findRightSibling(node))
             table.append(line)
-        return tabulate(table,headers,"grid")
+        return tabulate(table, headers, "grid")
 
-    def printToFile(self,file):
-        f = open(file,"a")
+    def printToFile(self, file):
+        f = open(file, "a")
         f.truncate(0)
         f.write(self.__str__())

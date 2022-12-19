@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59074377-68f2-4df0-8c90-824b11461081" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Tests/TestP1/parser_outp1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ParserTests/p1_parser_result" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/complexGrammarTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/p2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/p3err" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/parserResult.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/pif.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/st.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/parserResult.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/pif.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/simpleGrammarTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/simpleProblem.in" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/st.out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/Grammar.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/Grammar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/ParserOutput.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/ParserOutput.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/cfg.in" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parser/g2.in" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/simpleGrammar.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scanner/Scanner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scanner/Scanner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Emi_Grammar.in" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/complexGrammar.in" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/TestP1/parser_outp1" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/TestP1/parser_outp1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <list id="eaefe9dd-328e-4f0e-afa5-af93e49d173d" name="Changes by evolo" comment="" />
@@ -35,28 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/vraja/Downloads/project_kojak-master&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/vraja/Documents/GitHub/FLCD/Tests/IntegrationTests/ComplexGrammar"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\IntegrationTests\ComplexGrammar" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Scanner" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP1" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\FiniteAutomata" />
-      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP3err" />
-      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\TestP1" />
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\IntegrationTests\ComplexGrammar" />
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\IntegrationTests\simpleGrammar" />
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests\IntegrationTests" />
       <recent name="C:\Users\vraja\Documents\GitHub\FLCD\Tests" />
-      <recent name="C:\Users\vraja\Documents\GitHub\FLCD" />
+      <recent name="C:\Users\vraja\Documents\GitHub\FLCD\FiniteAutomata" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.complexGrammarTest">
     <configuration name="Grammar" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FLCD" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,6 +89,27 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Parser/Grammar.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="complexGrammarTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FLCD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/IntegrationTests/ComplexGrammar/complexGrammarTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -101,12 +140,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="simpleGrammarTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FLCD" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Tests/IntegrationTests/simpleGrammar/simpleGrammarTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.complexGrammarTest" />
+      <item itemvalue="Python.simpleGrammarTest" />
       <item itemvalue="Python.Grammar" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.complexGrammarTest" />
+        <item itemvalue="Python.simpleGrammarTest" />
         <item itemvalue="Python.Grammar" />
       </list>
     </recent_temporary>
@@ -140,6 +204,8 @@
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="PythonConfigurationType">
+        <watch expression="config.w[config.mostFarIndex-1]" language="Python" />
+        <watch expression="config.w[config.mostFarIndex]" language="Python" />
         <watch expression="productions" />
         <watch expression="config.inputStack" language="Python" />
         <watch expression="config.currentSymbol()" language="Python" />

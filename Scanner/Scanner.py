@@ -38,6 +38,7 @@ class Scanner:
 
     def scan(self):
         f = open(self.__filePath, 'r').readlines()
+        line_index = 1
         for line in f:
             line = line.replace("\n", "").replace("\t", "").split(" ")
             for token in line:
@@ -46,41 +47,41 @@ class Scanner:
                     continue
                 #revered words/operators/sep
                 elif token in reservedWords or token in separators or token in operators:
-                    self.__pif.append((token, -1))
+                    self.__pif.append((token, -1 , line_index))
                 else:
-                    self.handleTokenRecursive(token)
+                    self.handleTokenRecursive(token, line_index)
             self.__errIdx+=1
-
+            line_index += 1
         self.printToFile()
 
-    def handleTokenRecursive(self, token):
+    def handleTokenRecursive(self, token, line_index):
         #removing , between statements
         if re.findall(',',token):
             sep = re.findall(',',token)[0]
             token = token.replace(sep,'')
-            self.handleTokenRecursive(token)
-            self.__pif.append((sep, -1))
+            self.handleTokenRecursive(token, line_index)
+            self.__pif.append((sep, -1 , line_index))
         #checking if const or identifier
         elif not Scanner.checkOperator(token):
             #int const
             if token.isnumeric():
                 self.__symbolTable.addConstant(token)
-                self.__pif.append(("const", self.__symbolTable.hasConstant(token)))
+                self.__pif.append(("const", self.__symbolTable.hasConstant(token), line_index))
             #bool const
             elif token == 'true' or token == 'false':
                 self.__symbolTable.addConstant(token)
-                self.__pif.append(("const", self.__symbolTable.hasConstant(token)))
+                self.__pif.append(("const", self.__symbolTable.hasConstant(token), line_index))
             #string or char const
             elif (token[0] == "\"" and token[len(token) - 1] == "\"") or (
                     token[0] == "'" and token[len(token) - 1] == "'"):
-                self.__pif.append((token[0], -1))
+                self.__pif.append((token[0], -1, line_index))
                 self.__symbolTable.addConstant(token[1:-1])
-                self.__pif.append(("const", self.__symbolTable.hasConstant(token[1:-1])))
-                self.__pif.append((token[0], -1))
+                self.__pif.append(("const", self.__symbolTable.hasConstant(token[1:-1]), line_index))
+                self.__pif.append((token[0], -1, line_index))
             #identifier
             elif self.checkIdentifier(token):
                 self.__symbolTable.addIdentifier(token)
-                self.__pif.append(("identifier", self.__symbolTable.hasIdentifier(token)))
+                self.__pif.append(("identifier", self.__symbolTable.hasIdentifier(token), line_index))
             else:
                 self.__error = self.__error + 'invalid token on line ' + str(self.__errIdx) + ' : ' + token + '\n'
         #splits expressions by operators
@@ -88,9 +89,9 @@ class Scanner:
             op = Scanner.checkOperator(token)[0]
             token = token.split(op)
             token = Scanner.removeEmptyCharFromSplitToken(token)
-            self.handleTokenRecursive(token[0])
-            self.__pif.append((op, -1))
-            self.handleTokenRecursive(token[1])
+            self.handleTokenRecursive(token[0], line_index)
+            self.__pif.append((op, -1, line_index))
+            self.handleTokenRecursive(token[1], line_index)
 
     def printToFile(self):
         f_pif = open(self.__pifFilePath, "a")
@@ -107,9 +108,10 @@ class Scanner:
         for pair in self.__pif:
             s = s + pair[0] + '  pos:   '
             if not type(pair[1]) == int:
-                s = s + str(pair[1][0]) + ' ' + str(pair[1][1]) + '\n'
+                s = s + str(pair[1][0]) + ' ' + str(pair[1][1])
             else:
-                s = s + str(pair[1]) + '\n'
+                s = s + str(pair[1])
+            s = s + ' line: ' + str(pair[2]) + '\n'
         return s
 
     @staticmethod

@@ -1,0 +1,8 @@
+N -> declist cmpstmt declaration S
+E -> INCEPUT {  }  SFARSIT ; , dec stmt identifier
+S -> S
+P ->
+    S -> INCEPUT { declist } ; { cmpstmt } SFARSIT
+    declist -> declaration | declaration , declist
+    declaration -> identifier
+    cmpstmt -> identifier

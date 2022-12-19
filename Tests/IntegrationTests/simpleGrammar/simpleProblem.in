@@ -1,0 +1,5 @@
+INCEPUT
+    { dec , dec }
+;
+    { stmt }
+SFARSIT

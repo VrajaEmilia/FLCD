@@ -153,10 +153,4 @@ class Grammar:
                     else:
                         self.another_try(config)
 
-        if config.state == "e":
-            print(f"Parse result: Error")
-            print(f"Could not resolve {config.w[config.mostFarIndex]}")
-            return config
-        else:
-            print("Parse result: Sequence accepted")
-            return config
+        return config
